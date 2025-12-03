@@ -1,21 +1,24 @@
 const express = require('express');
-
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = 3000;
 
+// Mock weather data endpoint
 app.get('/api', (req, res) => {
-  res.json({
-    status: 'success',
-    city: 'London',
-    temperature_c: 15,
-    condition: 'Partly cloudy',
-  });
+  const weatherData = {
+    city: 'Sample City',
+    temperature: 25,
+    condition: 'Sunny',
+    timestamp: new Date()
+  };
+  res.json(weatherData);
 });
 
+// Health check endpoint
 app.get('/health', (req, res) => {
-  res.json({ status: 'ok', uptime: process.uptime() });
+  res.status(200).send('OK');
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend API listening on port ${PORT}`);
+// Start the server
+app.listen(port, () => {
+  console.log(`Backend running on port ${port}`);
 });
