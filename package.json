@@ -1,11 +1,17 @@
 {
   "name": "backend-api",
   "version": "1.0.0",
-  "description": "Simple mocked backend API",
+  "description": "Simple mocked backend API for testing",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
+  "keywords": [
+    "backend",
+    "api",
+    "express",
+    "mock"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
